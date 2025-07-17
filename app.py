@@ -20,7 +20,7 @@ GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini
 
 def get_gemini_response(prompt):
     if not GOOGLE_API_KEY:
-        raise ValueError("Google API Key is set in environment variables.") # <--- यदि KEY नहीं मिली तो एरर
+        raise ValueError("Google API Key is not set in environment variables.") # <--- यदि KEY नहीं मिली तो एरर
 
     headers = {
         "Content-Type": "application/json"
@@ -75,4 +75,3 @@ def chat_with_ai():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
-    
